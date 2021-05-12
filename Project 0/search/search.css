@@ -1,0 +1,29 @@
+#navtop {
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 22px;
+  height: 100px;
+  display: block;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#bfd255+0,8eb92a+50,72aa00+51,9ecb2d+100;Green+Gloss */
+  background: blue;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#bfd255", endColorstr="#9ecb2d",GradientType=0 );
+}
+#navtop ul {
+  list-style-type: none;
+  padding: 20px;
+}
+#navtop ul li {
+  display: inline;
+  text-decoration: none;
+  float: right;
+}
+#navtop ul li a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #FFF;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}/*# sourceMappingURL=search.css.map */
