@@ -1,0 +1,32 @@
+html,
+body,
+header,
+#intro {
+    height: 100%;
+}
+
+#intro {
+    background: url("")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+input.form-control.form-control-lg {
+	min-width: 35em; 
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+img {
+	margin-bottom: 50px;
+	margin-left: 200px;
+}
+
+button, input{
+	border-radius: 10px;
+	padding: 10px;
+}
+.form-control-lg {
+	border-radius: 10px !important;
+}

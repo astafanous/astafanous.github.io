@@ -1,3 +1,10 @@
+<!-- <a href="https://www.google.com/imghp?hl=en&tab=ri&ogbl">Google Image Search</a>
+<a href="index.html">Back to google-search </a>
+<input class="lsb" value="Search Images" name="btnG" type="submit">
+<a href="/advanced_image_search?hl=en-EG&amp;authuser=0">Advanced&nbsp;Image&nbsp;Search</a> -->
+
+<!-- https://www.google.com/search?q=Harvard&oq=HA&aqs=chrome.0.69i59j69i57j46i433j0i433j46i433j0i131i433j0j46i433j0i433j46.3935j0j15&sourceid=chrome&ie=UTF-8 -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +15,7 @@
   <title>Search</title>
 
   <!-- Your custom styles (optional) -->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -36,13 +43,13 @@
 !-- Social Icon  -->
 <ul class="navbar-nav nav-flex-icons">
     <li class="nav-item">
-        <a class="nav-link" href="image.html"> <i class="fab fa-image">
+        <a class="nav-link" href="index.html"> <i class="fab fa-images fa-w ">
           
-        </i> Google Image Search</a>
+        </i> go back to Google Search</a>
     </li>
     
-    <li class="nav-item">
-        <a class="nav-link" href="advanced.html"><i class="fab fa-instagram">Google Advanced Search</i></a>
+    <!-- <li class="nav-item">
+        <a class="nav-link" href="advanced.html"><i class="fab fa-instagram fa-w">Google Advanced Search</i></a> -->
     </li>
 </ul>
 </div>
@@ -74,9 +81,10 @@
                     <!-- <hr class="hr-light"> -->
 
                     <!-- Description -->
-                       <form action="https://google.com/search">
-                             <input class="form-control form-control-lg" type="text" name="q"> 
-                             <input class="form-control-lg" type="submit" value="Google Search"> 
+                       <form action="https://google.com/search" name="f">
+                       <input class="lst form-control form-control-lg" size="40" value="" title="Search Images" maxlength="2048" name="q">
+                             <input class="lsb" value="Search Images" name="btnG" type="submit"> 
+                             <!-- <a href="/advanced_image_search?hl=en-EG&amp;authuser=0">Advanced&nbsp;Image&nbsp;Search</a> -->
                               
                       </form>
                     <!-- <h4 class="white-text my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.</h4> -->
@@ -95,7 +103,3 @@
 <!--/.Mask-->
 </header>
 <!--Main Navigation-->
-
-</body>
-
-</html>
