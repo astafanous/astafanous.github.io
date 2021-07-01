@@ -1,0 +1,29 @@
+{% extends "wiki/layout.html" %}
+
+{% load markdown_extras %}
+
+{% block title %}
+Encyclopedia
+{% endblock %}
+
+{% block content %}
+{% if entries %}
+<p>{{ entries | markdown | safe }}</p>
+{% if str == edit %}
+{% url 'wiki:edit' %}
+{% endif %}
+{% else %}
+<div class="error">
+  <h1>Sorry </h1>
+
+  <h2> 404 - Your requested page cannot be found</h2>
+
+  <h4>Wiki does not have an article with this name</h4>
+</div>
+
+{% endif %}
+
+
+
+{%endblock%}
+<hr>
