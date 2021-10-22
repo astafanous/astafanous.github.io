@@ -117,4 +117,13 @@ def modify(request, title):
         return render(request, "wiki/modify.html", {"title": title, "edform":edform})
     
 
-
+def randoms(request):
+    entries = util.list_entries()
+    num = len(entries)
+    # generating a random number for the entry
+    entry = random.randint(0, num-1)
+    title = entries[entry]
+    mdcontent = util.get_entry(title)
+    htmlcontent = markdowner.convert(mdcontent)
+    form = NewSearchForm()
+    return render(request, "wiki/randoms.html", {"form": form, "title": title, "content": htmlcontent})
