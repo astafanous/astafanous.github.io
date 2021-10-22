@@ -89,10 +89,7 @@ def topics(request):
                 util.save_entry(title, markdown)
                 return redirect('wiki:index')
     else:
-            # return render(request, "wiki/topics.html", {
-            #     "form": form,
-            #     "exists": False
-            # })
+         
         return render(request, "wiki/topics.html", {
         "form": NewCreateForm(),
         "exists": False
@@ -100,9 +97,6 @@ def topics(request):
         
         
 class ModifyForm(forms.Form):
-    # title = forms.CharField(label="Modify Title")
-    # body = forms.CharField(label="Modify Body", widget=forms.Textarea(
-    #     attrs={'rows': 1, 'cols': 10}))
      body = forms.CharField(label="Modify Body", widget=forms.Textarea(
         attrs={'class': 'form-control', 'cols': '10'}))
     
@@ -112,29 +106,15 @@ def modify(request, title):
     if request.method == "POST":
         modifyform = ModifyForm(request.POST)
         if modifyform.is_valid():
-            # title = modifyform.cleaned_data.get("title")
-            # newcontent = modifyform.cleaned_data.get("body")
+
             newcontent = modifyform.cleaned_data["body"]
             # saving the new content
             util.save_entry(title, newcontent)
-            # form = NewSearchForm()
-            # htmlcontent = markdowner.convert(newcontent)
-            # return render(request, "wiki/modify.html", {
-            #     "title": title, "content": htmlcontent, "form": form
-            # })
-            # return redirect(request, "wiki:index", {
-            #     "title": title, "newcontent": htmlcontent
-            # })
+
             return HttpResponseRedirect(reverse('wiki:page', args=[title]))
     else:
-        # form = NewSearchForm()
-        # modifyform = ModifyForm({"title": title, "newcontent": util.get_entry(title)})
-        # return render(request, "wiki/modify.html", {"form": form, "modifyform": modifyform})
-        # return redirect(request, "wiki:page", {"form": form, "modifyform": modifyform})
-        # return render(request, "wiki/modify.html", {"title": title, "newcontent": util.get_entry(title)})
+      
         return render(request, "wiki/modify.html", {"title": title, "edform":edform})
     
 
 
-# def edit(request):
-#     return render(request, "wiki/edit.html") 
