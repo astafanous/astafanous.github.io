@@ -1,0 +1,2 @@
+#C
+C is a middle-level programming language developed by Dennis Ritchie during the early 1970s  As a middle-level language, C combines the features of both high-level and low-level languages. It can be used for low-level programming, such as scripting for drivers and kernels and it also supports functions of high-level

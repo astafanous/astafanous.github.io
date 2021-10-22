@@ -11,9 +11,10 @@ Encyclopedia
 
   <p>{{ entries | markdown | safe }}</p>
 
-   {% if str == edit %} 
-   {% url 'wiki:edit' %} 
-   {% endif %} 
+       <a href="{% url 'wiki:modify' title %}">
+          <i class="fa fa-edit fa-x " ></i> 
+          Edit
+      </a>    
    
    
    {% else %} 

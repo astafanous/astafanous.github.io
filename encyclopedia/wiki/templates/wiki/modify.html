@@ -1,0 +1,17 @@
+{% extends "wiki/layout.html" %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block content %}
+
+    <div>
+        {% comment %} <form action="{% url 'wiki:modify' title=modifyform.data.title %}" method="POST"> {% endcomment %}
+        <form action="{% url 'wiki:modify' title %}" method="POST">
+            {% csrf_token %}
+            {{edform}}
+            <input type="Submit" class="btn btn-primary mt-3" value="Submit"/>
+        </form>
+
+{% endblock %}
