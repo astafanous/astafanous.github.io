@@ -1,0 +1,19 @@
+{% extends "wiki/layout.html" %}
+
+{% block title %}
+    ERROR
+{% endblock %}
+{% load static %}
+{% block content %}
+    <h1>ERROR</h1>
+
+    <div class="container">
+        {{content}}
+
+        <div class="error2" style="margin-top: 40px;"  >
+           
+            </div>
+            <a href="{% url 'wiki:topics' %}">Create New Page</a>    
+    </div>
+    
+{% endblock %}

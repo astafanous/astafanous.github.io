@@ -38,10 +38,18 @@
             <div class="sidebar col-lg-3 col-md-4">
                 <h2>Wiki</h2>
                
-                <input class="search" type="text" name="q" placeholder="Search Encyclopedia">
+                {% comment %} <input class="search" type="text" name="q" placeholder="Search Encyclopedia">
                 
-                <input type="Submit" value="Go"/>
-
+                <input type="Submit" value="Go"/> {% endcomment %}
+                     <form action="{% url 'wiki:search' %}" method="GIT" >
+                        {% csrf_token %}
+                        <div class="input-group mb-3 mx-2">
+                            <input type="text" class="form-control search" name="q" placeholder="Search Encyclopedia" aria-label="Search Encyclopedia" aria-describedby="button-addon2" required>
+                                <div class="input-group-append">
+                                <input type="Submit" class="btn btn-secondary mb-4 ml-2" value="Go"/>
+                                </div>
+                        </div>
+                     </form>
                 <div>
                     <a href="{% url 'wiki:index' %}">Home</a>
                 </div>
