@@ -27,14 +27,35 @@ textarea {
     line-height: 15px;
 }
 
-.sidebar {
-    background-color: #d1dde2;
+.row {
+    margin-left: 0;
+}
+.sidebar {   /*background-color: #b8c8f3e6;*/    /*background-color: #1597E5;*/
+    background-color: #5ab5ebd6;
+    color: #FFF;
     height: 100vh;
     padding: 20px;
 }
+.sidebar a {
+    color: #000;
+    font-weight: 800;
+    font-size: 20px;
+}
 
 .sidebar h2 {
-    margin-top: 5px;
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.left {
+    margin-top: 150px;
+}
+span {
+    float: right;
+}
+a {
+    margin-left: 45px;
 }
 .error {
 
@@ -43,3 +64,14 @@ textarea {
 
 }
 
+.container {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}

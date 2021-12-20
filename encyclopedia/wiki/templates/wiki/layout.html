@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    {% block body %}
+ {% comment %} {% block body %} {% endcomment %}
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand" href="{% url 'wiki:index'%}">Django Home</a>
@@ -36,7 +36,10 @@
 
         <div class="row">
             <div class="sidebar col-lg-3 col-md-4">
-                <h2>Wiki</h2>
+              <img class="img-fluid w-50 text-center mx-5 mb-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Wikipedia_logo_%28svg%29.svg/1250px-Wikipedia_logo_%28svg%29.svg.png" alt="Wiki logo">
+
+                    <img class="img-fluid text-center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Wikipedia-logo-textonly.svg/200px-Wikipedia-logo-textonly.svg.png" alt="">
+                {% comment %} <h2>Wiki</h2> {% endcomment %}
                
                 {% comment %} <input class="search" type="text" name="q" placeholder="Search Encyclopedia">
                 
@@ -59,16 +62,33 @@
                 <div>
                     <a href="{% url 'wiki:randoms' %}">Random Page</a>
                 </div>
-                {% endblock %}
+                {% comment %} {% endblock %} {% endcomment %}
                 {% block nav %}
                 {% endblock %}
             </div>
             <div class="main col-lg-9 col-md-8">
-                {% block content %}
-                {% endblock %}
-            </div>
+                <div class="row">
+                    <div class="main col-lg-8 col-md-8 pl-3">
+                    {% block content %}
+                    {% endblock %}
+                    </div>
+                <div class="sidebar left col-lg-4 col-md-4">
+                   <img class="img-fluid w-50 text-center mx-5 mb-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Wikipedia_logo_%28svg%29.svg/1250px-Wikipedia_logo_%28svg%29.svg.png" alt="Wiki logo"/>
+
+                   <img class="img-fluid text-center mb-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Wikipedia-logo-textonly.svg/200px-Wikipedia-logo-textonly.svg.png" alt=""/>
+               
+                    <ul class="nav flex-column">
+                        <li>Type of site  <span>online cs50</span></li>
+                        <li>Country of <span>Egypt</span></li>
+                        <li>Design by <span>Fawzy Astafanous</span></li>
+                    </ul>
+
+                </div>
+                </div>
+                </div>
         </div>
     </div>
+{% comment %} {% endblock %} {% endcomment %}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

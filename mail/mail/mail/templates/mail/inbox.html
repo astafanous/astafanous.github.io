@@ -1,0 +1,80 @@
+{% extends "mail/layout.html" %}
+{% load static %}
+
+{% block body %}
+<div class="row">
+    <div class="col d-flex justify-content-between">    
+        <h2>{{ request.user.email }}</h2>
+        <div class="flex-column align-self-center header-right-top">
+            <p>
+                <a class="btn btn-sm btn-outline-primary custom-btn" href="{% url 'index' %}"> <h6><img src="{% static 'mail/image/MAIL-4.png'%}" alt=""> </h6></a>
+            </p>&nbsp; 
+        </div>
+    </div>
+</div>
+<div class="row">    
+    <div class="col d-flex justify-content-center">
+        <button class="btn btn-sm btn-outline-primary" id="inbox">&nbsp; Inbox</button>
+        <button class="btn btn-sm btn-outline-primary" id="compose">&nbsp; Compose</button>
+        <button class="btn btn-sm btn-outline-primary" id="sent">&nbsp; Sent</button>
+        <button class="btn btn-sm btn-outline-primary" id="archived">&nbsp; Archived</button>
+        <a class="btn btn-sm btn-outline-primary" href="{% url 'logout' %}">&nbsp; Log Out</a>
+    </div>
+</div>
+    <hr>
+
+    <div id="emails-view">
+    </div>
+    
+    <div id="single-email-view">
+       <h3>view mail</h3>
+       {% csrf_token %}
+        <!-- <div class='view-mail-container' data-id={{emailId}}> -->
+            <div class='view-mail-header' >
+                    <div class='view-mail-header-top' >
+                        Subject : <h5></h5>
+                    </div>  
+                    <!-- <div class="row"> -->
+                        <div class="col d-flex justify-content-between">
+                            
+                            <div class='view-mail-box'>
+                                From: <div id="sender"></div><br>
+                                To: <div id="recipients"></div><br>
+                                    <div id="timestamp"></div><br>
+                            </div>
+
+                            <div class="view-mail-archive"></div>
+
+
+                            
+                        </div> 
+                    <!-- </div> --> 
+                    <div class='view-mail-main'>
+                     <p>emailBody : <div id="mail-body"></div>  </p>
+                    </div>
+            </div> 
+                
+      <!--   </div>   -->
+    </div>    
+   
+    <div id="compose-view">
+        <h3>New Email</h3>
+        <form id="compose-form">
+            <div class="form-group">
+                From: <input disabled class="form-control" value="{{ request.user.email }}">
+            </div>
+            <div class="form-group">
+                To: <input id="compose-recipients" class="form-control">
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="compose-subject" placeholder="Subject">
+            </div>
+            <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
+           <input type="submit" class="btn btn-primary"/> 
+        </form>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'mail/inbox.js' %}"></script>
+{% endblock %}
