@@ -1,0 +1,25 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% load markdown_extras %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+
+
+
+{% block content %}
+
+    <h1>All Pages</h1>
+ <div class="container">
+
+    <ul>
+        {% for entry in entries %}
+        <a href="wiki/{{entry }}"><li>{{ entry | markdown | safe  }}</li>
+        </a>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+

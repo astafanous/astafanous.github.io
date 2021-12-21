@@ -1,0 +1,24 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% load markdown_extras %}
+
+{% block body %}
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'encyclopedia:index' %}">Django Home</a>
+    </div>
+  </nav>
+  <h2 style="text-align: center; padding: 50px;">New Topic</h2>
+  <div class="container col-lg-6 ">
+<form class="entry-form" action="{% url 'encyclopedia:topics' %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    {% if exists %}
+    {% comment %} <p class="alert alert-danger">Entry '{{ title }}' already exists.</p> {% endcomment %}
+    {% endif %} 
+    <input type="submit" class="btn btn-primary mt-3" value="Save"> 
+</form>
+
+
+
+{% endblock %}

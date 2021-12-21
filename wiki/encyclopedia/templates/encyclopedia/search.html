@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Searching for "{{ string }}":</h1>
+    <ul>
+        {% for subStringEntry in subStringEntries %}
+            <li class="mb-2"><a href="{% url 'encyclopedia:entry' subStringEntry %}">{{subStringEntry}}</a></li>
+        {% empty %}
+            No results found
+        {% endfor %}
+    </ul>
+ </div>
+{% endblock %}
