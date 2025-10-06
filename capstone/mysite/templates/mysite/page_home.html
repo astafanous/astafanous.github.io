@@ -1,0 +1,419 @@
+{% extends "mysite/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark mb-4 text-white">
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Egphoto Gallery
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'index' %}">Visit Site</a></li>
+                </ul>
+            </div>
+            <div class="container justify-content-center">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group me-2" role="group" aria-label="First group">
+                        <button data-page="page1" class="btn btn-primary">1</button>
+                        <button data-page="page2" class="btn btn-primary">2</button>
+                        <button data-page="page3" class="btn btn-primary">3</button>
+                        <button data-page="page4" class="btn btn-primary">4</button>
+                    </div>
+                    <div class="btn-group me-2" role="group" aria-label="Second group">
+                        <button data-page="page5" class="btn btn-secondary">5</button>
+                        <button data-page="page6" class="btn btn-secondary">6</button>
+                        <button data-page="page7" class="btn btn-secondary">7</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="page-home">
+        <div id="page1" class="page-section" style="display: block;">
+            <h1 class="text-center my-5">Blog 1 </h1>
+        <!-- Start Features -->
+            <div class="features text-center my-5">
+                <div class="container ">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-sm-6 col-md-3 d-flex flex-column align-items-center">
+                            <i class="fa fa-home fa-2x rounded-circle mb-5"></i>
+                            <h3>Great Idea</h3>
+                            <p>Many people believed that the visit Egypt is to visit the Pharaonic monuments, Egyptian Museum, Hotels at all levels, Beaches, Pyramids, Temples, All of this is wonderful, But don’t look to the hidden meaning behind visiting Egypt,It isn’t just a visit to the tourism and recreation, Every country has a lot of aspects of tourism and recreation, </p>
+
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <i class="fa fa-globe fa-2x mb-5"></i>
+
+                            <h3>Visiting Egypt</h3>
+                            <p> But the real difference between visiting Egypt and other countries lies in simplicity, Who hasn’t tired of the life of luxury and technology and would like to live a very simple life doesn’t see any manifestation of Technology,a lot of the Egyptian country didn’t abandon about Their Ancient heritage With the ability to live in luxury,</p>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+
+                            <i class="fa fa-globe fa-2x mb-5"></i>
+
+                            <h3>Life of Originality</h3>
+                            <p>But They chose the life of originality on the life of luxury, You feel pleasure when you sit down with these people when you see them cook the Egypt simple foods, When you taste the foods You will feel something wonderful,Taste you don’t want him to leave your mouth,Or sit with them around the fire under a clear sky full of stars when they grilling meat and drinking the Delicious Egyptian Tea</p>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <i class="fa fa-globe fa-2x mb-5"></i>
+
+                            <h3>Tolerance and Generosity</h3>
+                            <p>and Tell interesting anecdotes about Egypt and the Egyptians And that make you feel warm and tolerance and the extent of generosity that you touch in These people, Is this scene can be missed ?
+                                I don’t think so
+
+                                So, visite to Egypt and Egyptians are a treasure No one can leave it</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    <!-- End Features -->
+    <!-- Start Overview -->
+        <div id="page2" class="page-section" style="display: none;">
+            <h1 class="text-center my-5">Blog 2 </h1>
+
+            <div class="overview text-center">
+                <div class="container">
+                    <h1>Lotus Photo</h1>
+
+                    <h2>A photo gallery of Egypt</h2>
+                    <p>Hover on an image to enlarge it and Click to Rotate, You can also use the <b>tab key</b> to navigate to the next photo..</p>
+                    <section class="imageGallery">
+                        <img tabindex="1" src="{% static 'mysite/img/images/lotus-photo.jpg' %}" alt="imageGallery">
+                        <img tabindex="2" src="{% static 'mysite/img/images/photo-1.jpg' %}" alt="imageGallery">
+                        <img tabindex="3" src="{% static 'mysite/img/images/photo-2.jpg' %}" alt="imageGallery">
+                        <img tabindex="4" src="{% static 'mysite/img/images/Sharm-photo.jpg' %}" alt="imageGallery">
+                        <img tabindex="5" src="{% static 'mysite/img/images/alex-photo.jpg' %}" alt="imageGallery">
+                        <img tabindex="6" src="{% static 'mysite/img/images/photo-3.jpg' %}" alt="imageGallery">
+                        <img tabindex="7" src="{% static 'mysite/img/images/photo-4.jpg' %}" alt="imageGallery">
+                        <img tabindex="8" src="{% static 'mysite/img/images/photo-6.jpg' %}" alt="imageGallery">
+                        <img tabindex="9" src="{% static 'mysite/img/images/photo-5.jpg' %}" alt="imageGallery">
+                        <img tabindex="10" src="{% static 'mysite/img/images/photo-7.jpg' %}" alt="imageGallery">
+                        <img tabindex="11" src="{% static 'mysite/img/images/photo-8.jpg' %}" alt="imageGallery">
+                        <img tabindex="12" src="{% static 'mysite/img/images/photo-9.jpg' %}" alt="imageGallery">
+                        <img tabindex="13" src="{% static 'mysite/img/images/photo-10.jpg' %}" alt="imageGallery">
+                        <img tabindex="14" src="{% static 'mysite/img/images/photo-11.jpg' %}" alt="imageGallery">
+                        <img tabindex="15" src="{% static 'mysite/img/images/photo-15.jpg' %}" alt="imageGallery">
+
+                    </section>
+
+                </div>
+            </div>
+
+        </div>
+    <!-- End Overview -->
+    <!-- Start Featured Work -->
+        <div id="page3" class="page-section" style="display: none;">
+            <h1 class="text-center my-5">Blog 3 </h1>
+
+            <div class="featured-work text-center my-4">
+                <div class="container">
+                    <h2>The Holy Family's Journey to Egypt</h2>
+                    <p>The path of the Holy Family in Egypt. a journey of suffering that filled the earth with blessing and beautywith the omens and flashes of the Holy journey the traditional Christian account of the Holy Family—Mary, Joseph, and the infant Jesus—seeking refuge in Egypt to escape persecution by King Herod. Within the context of the site, which emphasizes Egypt's depth beyond its famous monuments and luxurious offerings, the reference to the Holy Family adds a spiritual and historical layer to Egypt's cultural richness.</p>
+
+
+                    <div class="shuffle-imgs">
+                        <div class="row d-flex justify-content-center ">
+                            <div class="col-md">
+                                <img class="mark" src="{% static 'mysite/img/images/img-1.jpg' %}" alt="slider" style='width: 100%'>
+
+                            </div>
+                            <div class="col-md">
+                                <img class="graphic" src="{% static 'mysite/img/images/img-2.jpg' %}" alt="slider" style='width: 100%'>
+
+                            </div>
+                            <div class="col-md">
+                                <img class="logos" src="{% static 'mysite/img/images/img-3.jpg' %}" alt="slider" style='width: 100%'>
+                            </div>
+                            <div class="col-md">
+                                <img class="mark" src="{% static 'mysite/img/images/img-4.jpg' %}" alt="slider" style='width: 100%'>
+
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md">
+                                <img class="videos" src="{% static 'mysite/img/images/img-5.jpg' %}" alt="slider" style='width: 100%'>
+                            </div>
+                            <div class="col-md">
+                                <img class="website" src="{% static 'mysite/img/images/img-6.jpg' %}" alt="slider" style='width: 100%'>
+                            </div>
+                            <div class="col-md">
+                                <img class="videos" src="{% static 'mysite/img/images/img-7.jpg' %}" alt="slider" style='width: 100%'>
+                            </div>
+                            <div class="col-md">
+                                <img class="mark" src="{% static 'mysite/img/images/img-8.jpg' %}" alt="slider" style='width: 100%'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    <!-- End  Featured Work -->
+    <!-- Start Latest Posts -->
+        <div id="page4" class="page-section" style="display: none;">
+            <h1 class="text-center my-5">Blog 4 </h1>
+
+            <div class="latest-posts text-center my-4">
+                <div class="container ">
+                    <div class="row d-flex text-left ">
+
+                        <h2>Latest Posts</h2>
+
+                        {% for post in latest_posts %}
+                            <div class="col-sm-12 col-md-6">
+                        <!-- Card Narrower -->
+                                <div class="card card-cascade narrower">
+                                    <div class="img-card">
+                                        <img src="{{ post.imageUrl }}" alt="{{ post.title }}">
+                                        <h3>{{ post.title }}</h3>
+                                        <p>{{ post.excerpt|truncatewords:20 }}</p>
+                                        <a href="{% url 'post' post.id %}">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <p>No posts available yet.</p>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- End Latest Posts -->
+    <!-- Start founder -->
+        <div id="page5" class="page-section" style="display: none;">
+            <h1 class="text-center my-5">Blog 5 </h1>
+
+            <div class="founder my-5">
+                <div class="overlay">
+                    <div class="container ">
+
+                        <div id="founderAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+                            <div class="carousel-indicators">
+
+                                <button type="button" data-bs-target="#founderAutoplaying" data-bs-slide-to="0" class="active"></button>
+                                <button type="button" data-bs-target="#founderAutoplaying" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#founderAutoplaying" data-bs-slide-to="2"></button>
+
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+
+                                    <div class="carousel-caption">
+                                        <img src="{% static 'mysite/img/images/egy-001.jpg' %}" alt="Alexander">
+                                        <h3 class="alexG mb-2">Alexander the Great</h3>
+                                        <span>the Mosaic Museum in Alexandria </span><br />
+                                        <span>Hover On Image</span>
+                                        <p>The official website of the Mosaic Museum in Alexandria published a picture of a rare coin of Alexander the Great, under the title Alexandria, Alexander's gift, which is dated between 332-323 BC.
+                                            a four-drachma coin.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+
+
+                                    <div class="carousel-caption">
+                                        <img src="{% static 'mysite/img/images/Jean-Francois_Champollion-1.jpg' %}" alt="Champollion" />
+                                        <h3>Champollion</h3>
+                                        <span>Jean-François Champollion</span><br />
+                                        <span class="hov mb-4 p-4">Hover On Image</span>
+                                        <p>
+                                            In 1822 the "Rosetta Stone" responded to the efforts of French Champlion to rekindle life in the ancient history of Egypt. "My whole being is for Egypt, it is all for me," written by Jean-François Champollion. Or a letter he wrote during his visit to Egypt in 1828 to his brother in Paris.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+
+                                    <div class="carousel-caption ">
+                                        <img src="{% static 'mysite/img/images/ramses_2.jpg' %}" alt="ramses_2">
+                                        <h3>Ramesses II</h3>
+                                        <span>Ramesses the Great </span><br />
+                                        <span class="hov mb-4 p-4">Hover On Image</span>
+                                        <p>Ramesses II, commonly known as Ramesses the Great, was one of ancient Egypt's most powerful and celebrated pharaohs, reigning from 1279 to 1213 BCE and known for his military prowess, monumental architecture, and long reign. He was born around 1303 BCE to Seti I and Queen Tuya. He became the third pharaoh of the Nineteenth Dynasty and ascended to the throne around 1279 BCE, likely after serving as co-regent with his father. His reign lasted an impressive 66 years, making it one of the longest in ancient Egyptian history.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    <!-- End founder -->
+    <!-- Start Relaxation -->
+        <div id="page6" class="page-section" style="display: none;">
+            <h1 class="text-center my-5">Blog 6 </h1>
+
+            <div class="relaxation text-center my-5">
+                <div class="container ">
+                    <h2>FOLLOW ME TO EGYPT</h2><br>
+                    <p>Egypt is a spectacularly beautiful country filled with cultural gems. There’s TONS of reasons why you should visit .
+                    </p><br>
+                    <div class="row d-flex text-center">
+
+                        <div class="col-sm-12 col-md-4">
+                        <!-- Card Narrower -->
+                            <div class="card card-cascade narrower">
+
+                            <!-- Card image -->
+                                <div class="view view-cascade overlay">
+                                    <img class="card-img-top" src="{% static 'mysite/img/images/museum-cairo.jpg' %}" alt="slider" style='width: 100%'>
+                                    <a>
+                                        <div class="mask rgba-white-slight"></div>
+                                    </a>
+                                </div>
+
+                            <!-- Card content -->
+                                <div class="card-body card-body-cascade">
+
+                                <!-- Title -->
+                                    <h4 class="font-weight-bold card-title">The Egyptian Museum</h4>
+                                <!-- Text -->
+                                    <p class="card-text"> From The Metropolitan Museum in New York, to the Louvre in Paris, Ancient Egypt tends to feature prominently in museums world-wide. Once you have been to Egypt. No museum is adequate anymore. The immense amount of fascinating artefacts that can be seen in the Egyptian Museum is outstanding. Moreover, King Tut exhibition may never be on tour again since a new national museum is expected. </p>
+                                <!-- Button -->
+                                    <a href="https://www.viator.com/tours/Cairo/The-National-Museum-of-Egyptian-Civilization-NMEC/d782-110922P22?m=33953&supag=1229255019979172&supsc=dat-2328628189094078&supai=76828570374415&supdv=c&supnt=nt:o&suplp=187&supli=154522&supti=dat-2328628189094078&tsem=true&supci=dat-2328628189094078&supkw=National%20Museum%20Cairo.The%20Egyptian%20Museum&&m=33953&supag=1229255019979172&supsc=dat-2328628189094078&supai=76828570374415&supdv=c&supnt=nt:o&suplp=187&supli=154522&supti=dat-2328628189094078&tsem=true&supci=dat-2328628189094078&supkw=National%20Museum%20Cairo.The%20Egyptian%20Museum&msclkid=2391fee325581cb2abca966cfabe94b5&gclid=2391fee325581cb2abca966cfabe94b5&gclsrc=3p.ds&gad_source=7" class="btn btn-primary card-link">READ MORE</a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                        <!-- Card Narrower -->
+                            <div class="card card-cascade narrower">
+
+
+
+
+                            <!-- Card image -->
+                                <div class="view view-cascade overlay">
+                                    <img class="card-img-top" src="{% static 'mysite/img/images/river nile.jpg' %}" alt="slider" style='width: 100%'>
+                                    <a>
+                                        <div class="mask rgba-white-slight"></div>
+                                    </a>
+                                </div>
+
+                            <!-- Card content -->
+                                <div class="card-body card-body-cascade">
+
+                                <!-- Title -->
+                                    <h4 class="font-weight-bold card-title">Kick Back, Relax.</h4>
+                                <!-- Text -->
+                                    <p class="card-text">And Ride the Nile River Enjoy three night cruise on the Nile traveling from Aswan to Luxor. Aside from forcing to relax and slow down a bit, the scenery from the ship is fantastic and ever-changing, As you travel down what is considered the lifeline of Ancient Egyptians. IT's like a hotel on water: there are pools, restaurants, clubs, which include plays, belly dancers, folk music, and more. </p>
+                                <!-- Button -->
+                                    <a href="https://www.youregypttours.net/egypt-day-trips/aswan-day-tours" class="btn btn-primary card-link">READ MORE</a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                        <!-- Card Narrower -->
+                            <div class="card card-cascade narrower">
+
+
+                            <!-- Card image -->
+                                <div class="view view-cascade overlay">
+                                    <img class="card-img-top" src="{% static 'mysite/img/images/sharm-el-sheikh-diving-1.jpg' %}" alt="slider" style='width: 100%'>
+                                    <a>
+                                        <div class="mask rgba-white-slight"></div>
+                                    </a>
+                                </div>
+
+                            <!-- Card content -->
+                                <div class="card-body card-body-cascade">
+
+                                <!-- Title -->
+                                    <h4 class="font-weight-bold card-title">sharm-el-sheikh-diving</h4>
+                                <!-- Text -->
+                                    <p class="card-text">One of the reasons Sharm is a top dive location is that it has near-perfect conditions for almost every type of diver. The shallow, sandy-bottomed reefs of Na’ama Bay, Near and Middle Garden, Ras Katy and Ras Bob make for ideal Open Water dive sites. The more challenging dive sites of Ras Mohamed to the south and the island reefs of Tiran to the North can make for some very exciting drift dives. .</p>
+                                <!-- Button -->
+                                    <a href="https://www.bing.com/images/search?view=detailV2&ccid=GK3pH7ug&id=659DE96EF161FA2D34BFFA96DED8DD214A22288F&thid=OIP.GK3pH7ugQ0r1KP23gfeK_AHaE7&mediaurl=https%3a%2f%2fwww.circledivers.com%2fphotos%2fmedia-items%2f6P1A3657_a0e51_lg.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.18ade91fbba0434af528fdb781f78afc%3frik%3djygiSiHd2N6W%252bg%26pid%3dImgRaw%26r%3d0&exph=1333&expw=2000&q=sharm-el-sheikh-diving&mode=overlay&FORM=IQFRBA&ck=AEA837733955537EF945EEB7C3CA50C4&selectedIndex=0&idpp=serp&ajaxhist=0&ajaxserp=0" class="btn btn-primary card-link">READ MORE</a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    <!-- End Relaxation -->
+    <!-- Start Why Choose Us-->
+        <div id="page7" class="page-section" style="display: none;">
+            <h1 class="text-center my-5">Blog 7 </h1>
+
+            <div class="choose-us">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="info col-md-6">
+                            <img src="{% static 'mysite/img/images/img-ch.jpg' %}" alt="" style='width: 100%'>
+                        </div>
+                        <div class="info col-md-6">
+                            <h1 class="h1">Why Choose Egypt</h1>
+                            <p>You probably first encountered Egypt at school when you learned all about the pyramids, gods with mummification methods! There’s no doubt that Ancient Egypt has long been considered one of the most important and interesting civilizations in history. Today, Egypt remains just as interesting as so many of the old structures and monuments still exist.
+                                The Great Pyramid of Giza is the most well-known and is the only remaining survivor of the Seven Wonders of the Ancient World
+                                The Valley of the Kings is where the Egyptian pharaohs are buried. These tombs are simply stunning and depict moments of Egyptian mythology.
+                                The city of Luxor is regarded to be the world’s largest open-air museum with
+                                Hot Air Balloon Ride Trip in Luxor<br>
+
+								Abu Simbel is a historic site comprising two massive rock-cut temples in the village of Abu Simbel (Arabic: أبو سمبل), Aswan Governorate, Upper Egypt, near the border with Sudan. It is located on the western bank of Lake Nasser,
+
+                                Mount Sinai where Moses received the Ten Commandments from God.
+                                The Nile River is the longest river in the world in the middle of Egypt from the south to The Mediterranean Sea in the north
+                                The Red Sea &ٍSharm in the east .
+                            </p>
+                            <a href="https://www.google.com/search?q=Abu+Simbel+Temple&oq=Abu+Simbel+Temple&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTINCAEQLhivARjHARiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIGCAcQRRhB0gEINjc4MGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8#lpg=cid:CgIgAQ%3D%3D" class="btn btn-primary read-more">View More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    <!-- End Why Choose Us -->
+
+    <!--  Start Footer -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-8 text-center text-md-left text-uppercase">
+                        COPYRIGHT 2025 CS50'S &copy; | Web Programming with Python and JavaScript
+                    </div>
+                    <div class="col-sm-12 col-md-4 text-center text-md-right">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="https://www.facebook.com/astafanousf@yahoo.com"><i class="fab fa-facebook-square"></i></a>
+                            </li>
+
+                            <li>
+                                <a href="#"><i class="fab fa-youtube-square"></i>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    <!-- end footer -->
+
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <!-- <script src="{% static 'mysite/main.js' %}"></script>
+    <script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script> -->
+
+{% endblock %}

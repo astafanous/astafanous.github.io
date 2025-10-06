@@ -1,0 +1,40 @@
+{% extends "mysite/layout.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- <div class="container text-center"> -->
+    <h1 class="m-4">Recent articles</h1>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-7">
+        <!-- Main content card -->
+            <h2 class="card-title">{{ page.title }}</h2>
+            <div class="card-body">
+                <div class="page-content">
+                    {{ page.content|safe }}
+                </div>
+            </div>
+
+        </div>
+
+        <div class="sidebar col-sm-12 col-md-5">
+        <!-- Sidebar card -->
+            <div class="card">
+                <div class="card-body">
+                    <img src="{{ page.imageUrl|default:'default.jpg' }} " class="card-img-top" class="mb-4" alt="{{ page.title }}" style="height: 300px;" />
+
+                    <p class="card-text"><small class="text-muted">Page Published on : {{ page.date }}</small></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<!-- </div> -->
+{% endblock %}
+
+<!-- {% block script %} <script src="{% static 'mysite/main.js' %}"></script> -->
+
+
+{% endblock %}

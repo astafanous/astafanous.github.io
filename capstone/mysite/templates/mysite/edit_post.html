@@ -1,0 +1,55 @@
+{% extends "mysite/layout.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+    <div class="container mt-5" style="max-width: 700px;">
+        <h2 class="mb-4 text-center">Edit Your Post</h2>
+        <form method="POST" class="border p-4 rounded shadow-sm bg-light">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" name="title" id="title" class="form-control" value="{{ post.title }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="content" class="form-label">Content</label>
+
+                <textarea name="body" id="body" rows="20" class="form-control" required>{{ post.body|safe }}</textarea>
+
+
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <a href="{% url 'post' post.id %}" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+
+{% block script %}
+
+
+<!-- jQuery FIRST -->
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+
+<!-- THEN Summernote -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet"> -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+<!-- Initialize Summernote -->
+    <script>
+        $(document).ready(function() {
+            $('#body').summernote({
+                height: 300
+            });
+        });
+    </script>
+
+
+{% endblock %}

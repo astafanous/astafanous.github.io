@@ -1,0 +1,115 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>{% block title %}egphoto_gallery{% endblock %}</title>
+
+        <link rel="stylesheet" href="{% static 'mysite/styles.css' %}">
+
+        <link rel="icon" href="{% static 'mysite/favicon.ico' %}" type="image/x-icon">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <!-- Summernote CSS & JS -->
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
+
+    </head>
+
+    <body>
+        {% block body %}
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark mb-4 text-white">
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Egphoto Gallery
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'dashboard' %}">Dashboard</a></li>
+                        <li><a class="dropdown-item" href="#">App Themes</a></li>
+                        <li><a class="dropdown-item" href="{% url 'create' %}">Add Post</a></li>
+                        <li>
+                        </ul>
+                    </div>
+
+
+                    <div class="collapse navbar-collapse d-flex justify-content-end">
+
+                        <ul class="navbar-nav mr-4"> <!-- Right side -->
+                            {% if user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'profile' user_id=user.id %}"><strong>Welcome: {{ user.username }}</strong></a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+
+                </nav>
+                <div id="beautifulEgyptAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+            <!-- Indicators -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#beautifulEgyptAutoplaying" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#beautifulEgyptAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#beautifulEgyptAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#beautifulEgyptAutoplaying" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#beautifulEgyptAutoplaying" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    </div>
+
+            <!-- Carousel Items -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{% static 'mysite/img/beautiful-egypt-1.jpg' %}" class="d-block w-100" alt="Egypt 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'mysite/img/beautiful-egypt-2.jpg' %}" class="d-block w-100" alt="Egypt 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'mysite/img/beautiful-egypt-3.jpg' %}" class="d-block w-100" alt="Egypt 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'mysite/img/beautiful-egypt-4.jpg' %}" class="d-block w-100" alt="Egypt 4">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'mysite/img/beautiful-egypt-5.jpg' %}" class="d-block w-100" alt="Egypt 5">
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+                {% block content %}
+                {% endblock %}
+
+        {% endblock %}
+
+        <!-- Bootstrap JS Bundle (includes Popper) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- jQuery (required for Summernote) -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script src="{% static 'mysite/main.js' %}"></script>
+
+
+        {% block script %}{% endblock %}
+
+    </body>
+
+</html>

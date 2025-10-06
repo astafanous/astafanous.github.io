@@ -1,0 +1,58 @@
+{% extends "mysite/layout.html" %}
+
+{% load static %}
+
+{% block content %}
+{% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-success fs-4" role="alert">
+    {{ message }}
+	</div>
+  {% endfor %}
+{% endif %}
+
+	<div class="container text-center">
+		<h1 class="mb-4">Recent articles</h1>
+		<div class="row">
+
+
+	           {% for post in page %}
+				<div class="col-sm-12 col-md-4">
+					<h3 class="text-cente mb-4">
+						<i class="fas fa-bolt mx-2"></i>
+						{{ post.category }}</h3>
+					<div class="card">
+
+						<div class="img-card">
+							<a href="#"><img src="{{ post.imageUrl }}" class="card-img-top" alt="{{ post.title }} style=" hight: 400px;"></a>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">{{ post.title }}</h5>
+							<p class="card-text">{{ post.excerpt }}</p>
+							<p class="card-text">{{ post.author }}</p>
+							<a href="{% url 'post' post.id %}" class="btn btn-primary">Read More</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+
+			<nav aria-label="Page navigation example">
+				<ul class="pagination d-flex justify-content-center">
+					{% if page.has_previous %}
+						<li class="page-item">
+							<a class="page-link" href="?page={{ page.previous_page_number }}&limit={{ request.GET.limit }}">Previous</a>
+						</li>
+					{% endif %}
+					{% if page.has_next %}
+						<li class="page-item">
+							<a class="page-link" href="?page={{ page.next_page_number }}&limit={{ request.GET.limit }}">Next</a>
+						</li>
+					{% endif %}
+				</ul>
+			</nav>
+		</div>
+	{% endblock %}
+
+
+
+

@@ -1,0 +1,166 @@
+{% extends "mysite/layout.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<h2 class="text-center mb-1"> {{ post.title }} Post</h2>
+<div class="container-fluid">
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li class="alert alert-success">{{ message }}</li>
+
+        <!-- <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li> -->
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-sm-8">
+
+            <div class="card">
+                <h2 class="card-title">{{ post.title }}</h2>
+
+                <div class="card-body">
+
+                    <div class="page-content">
+                        {{ post.body|safe }}
+                    </div>
+                    <h2 class="card-link">The Author Profile Link: {{ post.author }}</h2>
+                    <p class="card-text"><small class="text-muted">Post DateCreated: {{ post.date }}</small></p>
+
+                </div>
+
+            </div>
+
+            <h2>Comments</h2>
+            <br />
+            {% if user.is_authenticated %}
+            <form action="{% url 'comment' id=post.id %}" method="POST">
+                {% csrf_token %}
+                <div class="card-header font-weight-bold">Leave Reply</div>
+                <div class="card mb-3 wow fadein">
+                    <div class="card-body text-center">
+                        <div class="form-group">
+
+                            <label for="comment" class="comment mb-4">Comment:</label><br>
+                            <textarea name="new_comment" id="comment" class="form-control" rows="5"
+                                placeholder="Write Your Comment Here"></textarea><br>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-warning">Write Comment</button>
+                </div>
+            </form>
+
+
+            {% endif %}
+            <br />
+            <ul class="list-group">
+                {% for comment in comments %}
+                <li class="list-group-item">
+                    {{ comment.message }}
+                    <br />
+                    <p>Commented by: <strong>{{ comment.writor }}</strong></p>
+                    <p class="card-text"><small class="text-muted">Commented In: {{ comment.date}}</small></p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="sidebar col-sm-4">
+            <label label for="search">Search</label>
+            <input class="form-control" type="text" name="q">
+            <input type="submit" value="Search">
+            <img src="{{ post.imageUrl }}" class="card-img-top" alt="{{ post.title }} style=" hight: 300px;">
+            <div class="wedgit-content card mb-4">
+                <h2 class="heading">Recent Posts</h2>
+                <div class="card my-3">
+                    <div class="card-header">Recent Posts</div>
+                    <ul class="list-group list-group-flush">
+                        {% for post in recent_posts %}
+                        <li class="list-group-item">
+                            <a href="{% url 'post' post.pk %}">{{ post.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="card my-3">
+                <h2 class="card-comment">Recent Comments</h2>
+                <ul class="list-group list-group-flush">
+                    {% for comment in recent_comments %}
+                    <li class="list-group-item">
+                        {{ comment.message }}
+                    </li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+
+            <h2>Category</h2>
+            <br />
+            <form action="{% url 'addCategory' id=post.id %}" method="POST">
+                {% csrf_token %}
+                {% if user.is_authenticated %}
+                <div class="form-group">
+                    <label for="category">Add Category</label>
+                    <input type="text" name="new_categoryName">
+                </div>
+                <button type="submit" class="btn btn-warning">Add Category</button>
+                {% endif %}
+            </form>
+
+            <div class="accordion " id="accordionExample">
+                <div class="accordion-item">
+                    <div class="card-body">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Categories
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body mb-4">
+                                {% for category in categories %}
+                                <div class="check-column">
+                                    <label class="category-label">
+                                        <input type="checkbox">
+                                        {{ category.categoryName }}
+                                    </label>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="edit_post my-4">
+                            {% if user.is_authenticated and user.id == post.author.id %}
+                            <form action="{% url 'edit_post' post.id %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="entry_title" value="{{ title}}">
+                                <a href="{% url 'edit_post' post.id %}"><i class="fa fa-edit "></i>Edit Post</a>
+
+                                {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    {% endblock %}
+
+    {% block script %}
+    <!-- <script src="{% static 'mysite/main.js' %}"></script> -->
+
+    {% endblock %}
+
+
+

@@ -1,0 +1,226 @@
+.navbar {
+    opacity: 0.6;
+    background-color: #c6c7c8 !important;
+}
+
+.fa,
+.fas {
+    color: hsl(1.65deg 100% 50%);
+    /* color: #ff000061; */
+}
+
+.fa, .fas {
+    color: #e91e63 !important;
+}
+
+.carousel-item img, .img-card img {
+    height: 400px !important;
+}
+
+.post-text {
+  font-size: 1.6rem !important;
+  line-height: 1.8;
+}
+.comment {
+    float: left !important;
+}
+
+
+/* Ensure dropdown menu is above everything */
+.dropdown-menu {
+  position: absolute !important;
+  z-index: 3000; /* Higher than Bootstrap's default */
+  color: aliceblue !important;
+  display: block;
+}
+
+
+/* Dropdown items */
+.dropdown-item {
+  position: relative !important;
+  z-index: 2001 !important;
+  overflow: visible !important;
+  padding: 8px 8px 8px 30px !important;
+}
+
+/* Carousel stacking context */
+.carousel,
+.carousel-inner,
+.carousel-item,
+img {
+  position: relative !important;
+  z-index: 1 !important;
+}
+.posts {
+  padding-left: 10px !important;
+
+}
+
+
+.sidebar {
+  overflow: visible !important;
+  position: relative;
+}
+
+/* Navbar and dropdown containers */
+.navbar,
+.dropdown {
+  overflow: visible !important;
+  position: relative !important;
+  z-index: 3000 !important; /* Ensure navbar is top layer */
+}
+
+.card-title {
+  margin-top: 2rem !important;
+  /* text-align: center; */
+}
+.navbar-nav {
+
+    margin-right: 30px;
+}
+
+.nav-link {
+    color: aliceblue !important;
+}
+/* start overView */
+.page-home .overview {
+  background: #ededed;
+  text-align: center;
+  font-family: sans-serif;
+  padding: 1% 0;
+  font-size: 1.1em;
+
+
+  }
+
+.imageGallery {
+  height: 800px;
+  position: relative;
+}
+
+
+
+.page-home .overview header {
+  padding: 1% 0;
+  border-bottom: 3px solid #333;
+}
+.page-home .overview img {
+
+  /* width: 600px;
+  height: 400px; */
+  margin: 1%;
+  vertical-align: middle;
+
+}
+.choose-us p {
+  font-size: 20px;
+}
+
+.page-home .founder {
+
+  background-size: cover;
+  background-image: url("/static/mysite/img/images/egyp-01.jpg");
+   /* background-image: url("{% static 'egphoto_gallery/img/images/egyp-01.jpg' %}"); */
+  position: relative;
+  height: 600px;
+}
+
+ .page-home .founder .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.page-home .founder .container {
+  position: relative;
+  z-index: 3; }
+.page-home .founder .carousel-inner {
+  height: 600px;
+  display: flex; }
+
+.page-home .founder .carousel-inner .carousel-caption {
+  top: 50%;
+  margin-top: -240px;
+    color: #fff;
+    text-align: center;
+}
+.page-home .founder .carousel-inner .carousel-caption img {
+  margin-bottom: 20px;
+  width: 150px;
+  height: 150px !important; }
+.page-home .founder .carousel-inner .carousel-caption img:hover {
+  border-radius: 50%;
+  border: 3px solid#1c849e;
+}
+
+
+.page-home .founder span {
+  font-size: 25px;
+}
+
+
+.page-home .choose-us img {
+  max-width: 100%;
+  height: 628px !important;
+}
+
+page-home .founder .carousel-inner .carousel-caption {
+    top: 50%;
+    margin-top: -240px;
+}
+
+
+/*<!--  Start Copyright -->*/
+.footer {
+    border-top: 1px solid #888;
+    padding: 10px;
+    background-color: #08526d;
+    color: #FFF;
+    margin-top: 50px;
+}
+.footer ul {
+    margin: 0;
+}
+.footer ul li {
+    display: inline-block;
+}
+.footer ul li a {
+    color: #FFF;
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 18px;
+}
+/*<!-- End Copyright -->*/
+
+.gallery-img {
+  transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.gallery-img.rotated {
+  transform: rotate(90deg);
+}
+
+a:hover {
+  color: red !important;
+}
+.btn-primary:hover {
+  color: red !important;
+}
+.btn-secondary:hover {
+  color: red !important;
+}
+.btn-warning:hover {
+  color: red !important;
+}
+.btn-success:hover {
+  color: red !important;
+}

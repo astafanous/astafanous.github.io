@@ -1,0 +1,142 @@
+{% extends "mysite/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark mb-4 text-white">
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle ms-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Egphoto Gallery
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'index' %}">Visit Site</a></li>
+                </ul>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="{% url 'profile' user_id=user.id %}"><strong>Welcome: {{ user.username }}</strong></a>
+            </div>
+        </nav>
+
+        <div class="row">
+        <!-- Sidebar -->
+            <div class="col-sm-2 sidebar bg-black text-white  vh-100 ">
+            <!-- Dropdowns go here -->
+            <!-- Example split danger button -->
+                <div class="btn-group bg-black text-white mb-4">
+                    <button type="button" class="btn btn-secondary ms-4 p-3 ">Dashboard</button>
+                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'page_home' %}">Home</a></li>
+
+                    </ul>
+                </div>
+            <!-- Example split danger button -->
+                <div class="btn-group bg-black text-white mb-4">
+                    <button type="button" class="btn btn-secondary btn-lg ms-4 p-3 ">Posts</button>
+                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'all_posts' %}">All Posts</a></li>
+                        <li><a class="dropdown-item" href="{% url 'create' %}">Add Post</a></li>
+                        <li><a class="dropdown-item" href="#">Category</a></li>
+
+                    </ul>
+                </div>
+                <div class="btn-group bg-black text-white mb-4">
+                    <button type="button" class="btn btn-secondary btn-lg ms-4 p-3 ">Pages</button>
+                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'all_pages' %}">All Pages</a></li>
+                        <li><a class="dropdown-item" href="{% url 'add_page' %}">Add Page</a></li>
+
+                    </ul>
+                </div>
+                <div class="btn-group bg-black text-white mb-4">
+                    <button type="button" class="btn btn-secondary btn-lg ms-4 p-3 ">Comments</button>
+                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+
+
+                    {% for comment in recent_comments %}
+
+
+                        <li><a class="dropdown-item" href="/post/{{ comment.post.id }}">Comments: {{ comment.message|truncatechars:30 }}</a></li>
+
+
+                    {% endfor %}
+
+                    </ul>
+                </div>
+                <div class="btn-group bg-black text-white mb-4">
+                    <button type="button" class="btn btn-secondary btn-lg ms-4 p-3 ">Users</button>
+                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'register' %}">Add User</a></li>
+                        <li><a class="dropdown-item" href="{% url 'profile' user_id=user.id %}">{{ user.username }}</a></li>
+
+                    </ul>
+                </div>
+
+
+            </div>
+        <!-- Main Content -->
+            <div class="col-sm-10">
+                <div class="container bg-dark mb-4 text-white p-5">
+                    <h1 class="django text-center mt-4 p-4"><strong>Welcome To DjangoPress!<strong></h1>
+                    </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="wedgit-content card mb-4">
+                                    <h2 class="heading">Recent Posts</h2>
+                                    <div class="card my-3">
+                                        <div class="card-header">Recent Posts</div>
+                                        <ul class="list-group list-group-flush">
+                                            {% for post in recent_posts %}
+                                                <li class="list-group-item">
+                                                    <a href="{% url 'post' post.pk %}">{{ post.title }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="wedgit-content card mb-4">
+                                    <h2 class="heading">Recent Pages</h2>
+                                    <div class="card my-3">
+                                        <div class="card-header">Recent Pages</div>
+                                        <ul class="list-group list-group-flush">
+                                            {% for page in recent_pages %}
+                                                <li class="list-group-item">
+                                                    <a href="{% url 'new_page' page.id %}">{{ page.title }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}
